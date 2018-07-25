@@ -2,7 +2,7 @@
 
 ## 1.Add parkinglot
 ### Method: POST
-### Path:"/parkingLots/newParkingLots"
+### Path:"/parkingLots"
 ### Request
 ```java
 ParkingLot parkingLot
@@ -32,7 +32,7 @@ ArrayList<ParkingLot> parkingLots
 
 ## 2.Add parkingBoy
 ### Method: POST
-### Path:"/parkingBoys/newBoys"
+### Path:"/parkingBoys"
 ### Request
 ```java
 ParkingBoy parkingBoy
@@ -85,7 +85,7 @@ ArrayList<ParkingBoy> parkingBoys
 
 ## 3.Arrange parkinglot for parkingBoy
 ### Method: PUT
-### Path:"/parkingBoys/{id}/newParkingLots"
+### Path:"/parkingBoys/{id}"
 ### Request
 ```java
 String id, ParkingLot parkingLot

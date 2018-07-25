@@ -25,7 +25,7 @@ public class ParkingLotController {
     /**
      * 添加parkingLot
      */
-    @PostMapping("newParkingLots")
+    @PostMapping("")
     public ArrayList<ParkingLot> addParkingLot(@RequestBody ParkingLot parkingLot){
         parkingLotServiceImpl.addParkingLot(parkingLot);
         return parkingLotServiceImpl.getParkingLotsList();
