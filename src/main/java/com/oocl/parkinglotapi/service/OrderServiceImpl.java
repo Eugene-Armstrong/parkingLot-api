@@ -38,4 +38,18 @@ public class OrderServiceImpl implements OrderService {
             }
         }
     }
+
+    /**
+     * 获取可抢order列表
+     */
+    @Override
+    public ArrayList<Order> getValidateOrdersList() {
+        ArrayList<Order> validateOrders = new ArrayList<>();
+        for (Order order:orders){
+            if (order.isValidate()){
+                validateOrders.add(order);
+            }
+        }
+        return validateOrders;
+    }
 }

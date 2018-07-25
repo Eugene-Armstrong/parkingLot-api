@@ -8,4 +8,5 @@ public interface OrderService {
     ArrayList<Order> getOrdersList();
     void addOrder(Order order);
     void deleteOrder(String id);
+    ArrayList<Order> getValidateOrdersList();
 }

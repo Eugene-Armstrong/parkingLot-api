@@ -30,8 +30,8 @@ public class ReceiptServiceImpl implements ReceiptService{
         return carAndReceiptMap;
     }
 
-    /**获取所有receipt
-     *
+    /**
+     * 获取所有receipt
      */
     public ArrayList<Receipt> getReceiptsList(){
         return receipts;
