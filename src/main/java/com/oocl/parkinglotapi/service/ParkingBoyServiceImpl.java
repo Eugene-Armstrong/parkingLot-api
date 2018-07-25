@@ -9,8 +9,8 @@ import java.util.ArrayList;
 @Service
 public class ParkingBoyServiceImpl implements ParkingBoyService{
     ArrayList<ParkingLot> parkingLots = new ArrayList<ParkingLot>(){{
-        add(new ParkingLot("1"));
-        add(new ParkingLot("2"));
+        add(new ParkingLot("1",5));
+        add(new ParkingLot("2",10));
     }};
     ArrayList<ParkingBoy> parkingBoys = new ArrayList<ParkingBoy>(){{
         add(new ParkingBoy("1",parkingLots));

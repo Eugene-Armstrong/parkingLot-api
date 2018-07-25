@@ -7,7 +7,8 @@
 ```java
 ParkingLot parkingLot
 {
-    "id": "3"
+    "id": "3",
+    "size":3
 }
 ```
 ### Response
@@ -15,13 +16,16 @@ ParkingLot parkingLot
 ArrayList<ParkingLot> parkingLots
 [
     {
-        "id": "1"
+        "id": "1",
+        "size":5
     },
     {
-        "id": "2"
+        "id": "2",
+        "size":10
     },
     {
-        "id": "3"
+        "id": "3",
+        "size":3
     }
 ]
 ```
@@ -36,10 +40,12 @@ ParkingBoy parkingBoy
     "id": "2",
     "parkingLots": [
         {
-            "id": "111"
+            "id": "111",
+            "size":1
         },
         {
-            "id": "000"
+            "id": "000",
+            "size":10
         }
     ]
 }
@@ -52,10 +58,12 @@ ArrayList<ParkingBoy> parkingBoys
         "id": "1",
         "parkingLots": [
             {
-                "id": "1"
+                "id": "1",
+                "size":5
             },
             {
-                "id": "2"
+                "id": "2",
+                "size":10
             }
         ]
     },
@@ -63,10 +71,12 @@ ArrayList<ParkingBoy> parkingBoys
         "id": "2",
         "parkingLots": [
             {
-                "id": "111"
+                "id": "111",
+                "size":1
             },
             {
-                "id": "000"
+                "id": "000",
+                "size":10
             }
         ]
     }
@@ -81,7 +91,8 @@ ArrayList<ParkingBoy> parkingBoys
 String id, ParkingLot parkingLot
 "1"
 {
-    "id": "666"
+    "id": "666",
+    "size":6
 }
 ```
 ### Response
@@ -92,13 +103,16 @@ ArrayList<ParkingBoy> parkingBoys
         "id": "1",
         "parkingLots": [
             {
-                "id": "1"
+                "id": "1",
+                "size":5
             },
             {
-                "id": "2"
+                "id": "2",
+                "size":10
             },
             {
-                "id": "666"
+                "id": "666",
+                "size":6
             }
         ]
     }

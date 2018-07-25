@@ -30,4 +30,6 @@ public class ParkingLotController {
         parkingLotServiceImpl.addParkingLot(parkingLot);
         return parkingLotServiceImpl.getParkingLotsList();
     }
+
+
 }
