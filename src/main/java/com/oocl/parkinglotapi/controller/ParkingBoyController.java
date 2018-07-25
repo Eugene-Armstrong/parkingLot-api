@@ -26,7 +26,7 @@ public class ParkingBoyController {
     /**
      * 添加parkingBoy
      */
-    @PostMapping("newBoy")
+    @PostMapping("newBoys")
     public ArrayList<ParkingBoy> addParkingBoy(@RequestBody ParkingBoy parkingBoy){
         parkingBoyServiceImpl.addParkingBoy(parkingBoy);
         return parkingBoyServiceImpl.getParkingBoysList();
@@ -35,7 +35,7 @@ public class ParkingBoyController {
     /**
      * 给某个停车小弟安排停车场
      */
-    @PutMapping("{id}/newParkingLot")
+    @PutMapping("{id}/newParkingLots")
     public ArrayList<ParkingBoy> arrangeParkingLot(@PathVariable String id, @RequestBody ParkingLot parkingLot){
         parkingBoyServiceImpl.arrangeParkingLot(id,parkingLot);
         return parkingBoyServiceImpl.getParkingBoysList();
