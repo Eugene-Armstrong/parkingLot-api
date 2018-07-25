@@ -10,7 +10,10 @@ public class Car {
     }
 
     private String carId;
-    public Car(String id){
+    public Car(){
 
+    }
+    public Car(String id){
+        setCarId(id);
     }
 }

@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "c090aae0-0a1a-4ae2-863a-2eeef5218252",
+		"name": "parking-orders-v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "480a9be9-0b4e-4481-a67c-37f4eb84d5be",
+			"name": "get_all_orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "368f4601-3c9e-4b35-8883-486818da9d4f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"should return car by right receipt\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql([",
+							"    {",
+							"        \"id\": \"0\",",
+							"        \"carId\": \"粤12345\",",
+							"        \"boyId\": \"1\",",
+							"        \"validate\": true",
+							"    }",
+							"]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "624c851e-1228-4b42-b0f7-bf961f834871",
+			"name": "add_order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "108ea97a-53a4-4ce0-a728-ade6b7dd631e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"should return car by right receipt\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql([",
+							"    {",
+							"        \"id\": \"0\",",
+							"        \"carId\": \"粤12345\",",
+							"        \"boyId\": \"1\",",
+							"        \"validate\": true",
+							"    },{",
+							"        \"id\": \"1\",",
+							"        \"carId\": \"粤54321\",",
+							"        \"boyId\": \"2\",",
+							"        \"validate\": true",
+							"    }",
+							"]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"1\",\n        \"carId\": \"粤54321\",\n        \"boyId\": \"2\",\n        \"validate\": true\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "26f628a6-495e-4a5f-9c2e-4ef48287364d",
+			"name": "delete_order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "18340d3d-a65b-41c9-9ab0-b67990d4442e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"should return car by right receipt\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql([",
+							"    ",
+							"]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/orders/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "8169c27e-9e73-49ac-825d-23296ef57f5f",
+			"name": "get_validate_orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d8f071e-0175-43ba-9ff4-04b5250f6abe",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"should return car by right receipt\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql([",
+							"    {",
+							"        \"id\": \"0\",",
+							"        \"carId\": \"粤12345\",",
+							"        \"boyId\": \"1\",",
+							"        \"validate\": true",
+							"    }",
+							"]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

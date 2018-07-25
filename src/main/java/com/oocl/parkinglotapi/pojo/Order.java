@@ -42,9 +42,10 @@ public class Order {
 
     }
 
-    public Order(String id, boolean isValidate, String carId){
+    public Order(String id, boolean isValidate, String carId, String boyId){
         setId(id);
         setValidate(isValidate);
         setCarId(carId);
+        setBoyId(boyId);
     }
 }

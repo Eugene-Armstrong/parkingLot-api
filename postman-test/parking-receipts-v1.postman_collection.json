@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "9cb6e4ea-25c4-40b8-af8d-0fa5c7fa24a3",
+		"name": "parking-receipts-v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "472fe656-5ae7-4b44-9adc-abee35f8bbba",
+			"name": "get_all_receipts_and_cars",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a1dcf6b-e541-47e9-bd1e-12bd9d5e174c",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"should return the initialized receiptId and car\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"    \"e7086ba6-521e-4df5-b5e3-96c0b226ef25\": {",
+							"        \"carId\": \"粤666666\"",
+							"    }",
+							"});",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/receipts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"receipts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9be28bac-230a-44d4-8744-764a6524e692",
+			"name": "get_car_by_receipt",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "49ed78ca-d555-4f9f-90c0-0acd01371f68",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"should return car by right receipt\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"        \"carId\": \"粤666666\"",
+							"});",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/receipts/e7086ba6-521e-4df5-b5e3-96c0b226ef25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"receipts",
+						"e7086ba6-521e-4df5-b5e3-96c0b226ef25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "07ee22e2-c2be-4d7e-84ba-020749875cac",
+			"name": "add_receipt",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8f05fabe-dd09-41bc-b82a-f17ebba9b83d",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"should return car by right receipt\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length).to.eql(2);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"carId\": \"已添加\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/receipts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"receipts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e8411bfc-92a6-4af8-9905-d60f1e312590",
+			"name": "delete_receipt",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a16c880-0077-4080-ac22-fb982beba9bc",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"should return car by right receipt\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[0].validate).to.eql(false);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"carId\": \"已添加\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/receipts/e7086ba6-521e-4df5-b5e3-96c0b226ef25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"receipts",
+						"e7086ba6-521e-4df5-b5e3-96c0b226ef25"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

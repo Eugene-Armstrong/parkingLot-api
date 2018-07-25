@@ -10,6 +10,10 @@ import java.util.ArrayList;
 public class OrderServiceImpl implements OrderService {
 
     ArrayList<Order> orders = new ArrayList<>();
+    {
+        Order order = new Order("0",true,"粤12345","1");
+        orders.add(order);
+    }
 
     /**
      * 获取orders列表

@@ -16,7 +16,7 @@ public class ReceiptServiceImpl implements ReceiptService {
     ArrayList<Receipt> receipts = new ArrayList<>();
     Map<String,Car> carAndReceiptMap = new HashMap<>();
     {
-        String receiptId = UUID.randomUUID().toString();
+        String receiptId = "e7086ba6-521e-4df5-b5e3-96c0b226ef25";
         Receipt receipt = new Receipt(receiptId,true);
         Car car = new Car("粤666666");
         receipts.add(receipt);
