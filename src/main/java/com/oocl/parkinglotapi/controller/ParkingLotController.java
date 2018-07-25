@@ -15,7 +15,7 @@ public class ParkingLotController {
     private ParkingLotServiceImpl parkingLotServiceImpl;
 
     /**
-     * 获取停车场列表
+     * 获取parkingLot列表
      */
     @GetMapping("")
     public ArrayList<ParkingLot> getParkingLotsList(){
@@ -23,7 +23,7 @@ public class ParkingLotController {
     }
 
     /**
-     * 添加parkinglot
+     * 添加parkingLot
      */
     @PostMapping("newParkingLots")
     public ArrayList<ParkingLot> addParkingLot(@RequestBody ParkingLot parkingLot){
@@ -31,5 +31,13 @@ public class ParkingLotController {
         return parkingLotServiceImpl.getParkingLotsList();
     }
 
+    /**
+     * 删除parkingLot
+     */
+    @DeleteMapping("{id}")
+    public ArrayList<ParkingLot> deleteParkingLot(@PathVariable String id){
+        parkingLotServiceImpl.deleteParkingLot(id);
+        return parkingLotServiceImpl.getParkingLotsList();
+    }
 
 }

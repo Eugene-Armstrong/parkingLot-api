@@ -21,4 +21,14 @@ public class ParkingLotServiceImpl implements ParkingLotService{
     public void addParkingLot(ParkingLot parkingLot) {
         parkingLots.add(parkingLot);
     }
+
+    @Override
+    public void deleteParkingLot(String id) {
+        for(int i=0;i<parkingLots.size();i++){
+            if(parkingLots.get(i).getId().equals(id)){
+                parkingLots.remove(i);
+                break;
+            }
+        }
+    }
 }
