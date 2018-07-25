@@ -49,4 +49,13 @@ public class ParkingBoyController {
         parkingBoyServiceImpl.arrangeParkingLot(id,parkingLot);
         return parkingBoyServiceImpl.getParkingBoysList();
     }
+
+    /**
+     * 给某个parkingBoy取消安排parkingLot
+     */
+    @DeleteMapping("{boyId}/{lotId}")
+    public ArrayList<ParkingBoy> cancelArrangeParkingLot(@PathVariable String boyId, @PathVariable String lotId){
+        parkingBoyServiceImpl.cancelArrangeParkingLot(boyId,lotId);
+        return parkingBoyServiceImpl.getParkingBoysList();
+    }
 }

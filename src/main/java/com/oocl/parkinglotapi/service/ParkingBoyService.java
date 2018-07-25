@@ -10,4 +10,5 @@ public interface ParkingBoyService {
     void addParkingBoy(ParkingBoy parkingBoy);
     void deleteParkingBoy(String id);
     void arrangeParkingLot(String id, ParkingLot parkingLot);
+    void cancelArrangeParkingLot(String boyId,String lotId);
 }
