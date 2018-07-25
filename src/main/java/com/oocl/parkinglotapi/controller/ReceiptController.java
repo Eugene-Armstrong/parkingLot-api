@@ -2,7 +2,7 @@ package com.oocl.parkinglotapi.controller;
 
 import com.oocl.parkinglotapi.pojo.Car;
 import com.oocl.parkinglotapi.pojo.Receipt;
-import com.oocl.parkinglotapi.service.ReceiptServiceImpl;
+import com.oocl.parkinglotapi.serviceImpl.ReceiptServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

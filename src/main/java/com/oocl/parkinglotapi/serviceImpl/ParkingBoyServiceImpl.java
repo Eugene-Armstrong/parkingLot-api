@@ -1,13 +1,14 @@
-package com.oocl.parkinglotapi.service;
+package com.oocl.parkinglotapi.serviceImpl;
 
 import com.oocl.parkinglotapi.pojo.ParkingBoy;
 import com.oocl.parkinglotapi.pojo.ParkingLot;
+import com.oocl.parkinglotapi.service.ParkingBoyService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
 @Service
-public class ParkingBoyServiceImpl implements ParkingBoyService{
+public class ParkingBoyServiceImpl implements ParkingBoyService {
     ArrayList<ParkingLot> parkingLots = new ArrayList<ParkingLot>(){{
         add(new ParkingLot("1",5));
         add(new ParkingLot("2",10));

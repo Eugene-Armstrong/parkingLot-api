@@ -2,7 +2,7 @@ package com.oocl.parkinglotapi.controller;
 
 import com.oocl.parkinglotapi.pojo.ParkingBoy;
 import com.oocl.parkinglotapi.pojo.ParkingLot;
-import com.oocl.parkinglotapi.service.ParkingBoyServiceImpl;
+import com.oocl.parkinglotapi.serviceImpl.ParkingBoyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

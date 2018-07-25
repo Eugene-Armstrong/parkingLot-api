@@ -1,7 +1,7 @@
 package com.oocl.parkinglotapi.controller;
 
 import com.oocl.parkinglotapi.pojo.Order;
-import com.oocl.parkinglotapi.service.OrderServiceImpl;
+import com.oocl.parkinglotapi.serviceImpl.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

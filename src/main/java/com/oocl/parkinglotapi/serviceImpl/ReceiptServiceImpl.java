@@ -1,7 +1,8 @@
-package com.oocl.parkinglotapi.service;
+package com.oocl.parkinglotapi.serviceImpl;
 
 import com.oocl.parkinglotapi.pojo.Car;
 import com.oocl.parkinglotapi.pojo.Receipt;
+import com.oocl.parkinglotapi.service.ReceiptService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Service
-public class ReceiptServiceImpl implements ReceiptService{
+public class ReceiptServiceImpl implements ReceiptService {
 
     ArrayList<Receipt> receipts = new ArrayList<>();
     Map<String,Car> carAndReceiptMap = new HashMap<>();
