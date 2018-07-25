@@ -16,7 +16,7 @@ public class ParkingBoyController {
     private ParkingBoyServiceImpl parkingBoyServiceImpl;
 
     /**
-     * 获取停车小弟列表
+     * 获取parkingBoy列表
      */
     @GetMapping("")
     public ArrayList<ParkingBoy> getParkingBoysList(){
@@ -33,7 +33,16 @@ public class ParkingBoyController {
     }
 
     /**
-     * 给某个停车小弟安排停车场
+     * 删除parkingBoy
+     */
+    @DeleteMapping("{id}")
+    public ArrayList<ParkingBoy> deleteParkingBoy(@PathVariable String id){
+        parkingBoyServiceImpl.deleteParkingBoy(id);
+        return parkingBoyServiceImpl.getParkingBoysList();
+    }
+
+    /**
+     * 给某个parkingBoy安排parkingLot
      */
     @PutMapping("{id}/newParkingLots")
     public ArrayList<ParkingBoy> arrangeParkingLot(@PathVariable String id, @RequestBody ParkingLot parkingLot){

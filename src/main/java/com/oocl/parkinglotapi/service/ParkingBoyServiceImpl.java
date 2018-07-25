@@ -33,6 +33,19 @@ public class ParkingBoyServiceImpl implements ParkingBoyService{
     }
 
     /**
+     * 删除停车小弟
+     */
+    @Override
+    public void deleteParkingBoy(String id) {
+        for(int i=0;i<parkingBoys.size();i++){
+            if(parkingBoys.get(i).getId().equals(id)){
+                parkingBoys.remove(i);
+                break;
+            }
+        }
+    }
+
+    /**
      * 给某个停车小弟安排停车场
      */
     @Override
