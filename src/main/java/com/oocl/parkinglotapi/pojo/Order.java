@@ -4,6 +4,15 @@ public class Order {
     private String id;
     private boolean isValidate;
     private String carId;
+    private String boyId;
+
+    public String getBoyId() {
+        return boyId;
+    }
+
+    public void setBoyId(String boyId) {
+        this.boyId = boyId;
+    }
 
     public String getCarId() {
         return carId;

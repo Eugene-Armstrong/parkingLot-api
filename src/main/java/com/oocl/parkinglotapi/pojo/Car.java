@@ -10,4 +10,7 @@ public class Car {
     }
 
     private String carId;
+    public Car(String id){
+
+    }
 }

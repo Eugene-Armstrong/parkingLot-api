@@ -1,20 +1,39 @@
 package com.oocl.parkinglotapi.service;
 
+import com.oocl.parkinglotapi.pojo.Car;
 import com.oocl.parkinglotapi.pojo.Receipt;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class ReceiptServiceImpl implements ReceiptService{
 
     ArrayList<Receipt> receipts = new ArrayList<>();
+    Map<String,Car> carAndReceiptMap = new HashMap<>();
+    {
+        String receiptId = UUID.randomUUID().toString();
+        Receipt receipt = new Receipt(receiptId,true);
+        Car car = new Car("粤666666");
+        receipts.add(receipt);
+        carAndReceiptMap.put(receiptId,car);
+    }
 
     /**
-     * 获取所有receipt
+     * 获取所有receiptId和car
      */
     @Override
-    public ArrayList<Receipt> getReceiptsList() {
+    public Map<String,Car> getReceiptsAndCarsList() {
+        return carAndReceiptMap;
+    }
+
+    /**获取所有receipt
+     *
+     */
+    public ArrayList<Receipt> getReceiptsList(){
         return receipts;
     }
 
@@ -22,8 +41,22 @@ public class ReceiptServiceImpl implements ReceiptService{
      * 添加receipt
      */
     @Override
-    public void addReceipt(Receipt receipt) {
+    public void addReceipt(Car car) {
+        String receiptId = UUID.randomUUID().toString();
+        Receipt receipt = new Receipt(receiptId,true);
         receipts.add(receipt);
+        carAndReceiptMap.put(receiptId,car);
+    }
+
+    /**
+     * 凭票取车
+     */
+    @Override
+    public Car getCarByReceipt(String receiptId) {
+        if (carAndReceiptMap.keySet().contains(receiptId)){
+            return carAndReceiptMap.get(receiptId);
+        }
+        return null;
     }
 
     /**
@@ -31,10 +64,12 @@ public class ReceiptServiceImpl implements ReceiptService{
      */
     @Override
     public void deleteReceipt(String id) {
-        for(int i=0;i<receipts.size();i++){
-            if(receipts.get(i).getId().equals(id)){
-                receipts.remove(i);
-                break;
+        if (carAndReceiptMap.keySet().contains(id)){
+            for (Receipt receipts:receipts){
+                if (receipts.getId().equals(id)){
+                    receipts.setValidate(false);
+                    break;
+                }
             }
         }
     }

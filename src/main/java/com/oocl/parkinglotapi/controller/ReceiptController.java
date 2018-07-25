@@ -1,11 +1,13 @@
 package com.oocl.parkinglotapi.controller;
 
+import com.oocl.parkinglotapi.pojo.Car;
 import com.oocl.parkinglotapi.pojo.Receipt;
 import com.oocl.parkinglotapi.service.ReceiptServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/receipts")
@@ -15,13 +17,24 @@ public class ReceiptController {
     private ReceiptServiceImpl receiptServiceImpl;
 
     @GetMapping("")
-    public ArrayList<Receipt> getReceiptsList(){
-        return receiptServiceImpl.getReceiptsList();
+    public Map<String,Car> getReceiptsList(){
+        return receiptServiceImpl.getReceiptsAndCarsList();
+    }
+
+    @GetMapping("{receiptsId}")
+    public Car getCarByReceipt(@PathVariable String receiptsId){
+        return receiptServiceImpl.getCarByReceipt(receiptsId);
     }
 
     @PostMapping("")
-    public ArrayList<Receipt> addReceipt(@RequestBody Receipt receipt){
-        receiptServiceImpl.addReceipt(receipt);
+    public ArrayList<Receipt> addReceipt(@RequestBody Car car){
+        receiptServiceImpl.addReceipt(car);
+        return receiptServiceImpl.getReceiptsList();
+    }
+
+    @DeleteMapping("{id}")
+    public ArrayList<Receipt> deleteReceipt(@PathVariable String id){
+        receiptServiceImpl.deleteReceipt(id);
         return receiptServiceImpl.getReceiptsList();
     }
 

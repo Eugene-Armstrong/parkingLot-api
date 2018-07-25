@@ -1,12 +1,11 @@
 package com.oocl.parkinglotapi.service;
 
-import com.oocl.parkinglotapi.pojo.ParkingLot;
-import com.oocl.parkinglotapi.pojo.Receipt;
-
-import java.util.ArrayList;
+import com.oocl.parkinglotapi.pojo.Car;
+import java.util.Map;
 
 public interface ReceiptService {
-    ArrayList<Receipt> getReceiptsList();
-    void addReceipt(Receipt receipt);
+    Map<String,Car> getReceiptsAndCarsList();
+    void addReceipt(Car car);
+    Car getCarByReceipt(String receiptId);
     void deleteReceipt(String id);
 }
